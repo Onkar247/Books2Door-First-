@@ -1,0 +1,206 @@
+<html>
+<head>
+<title >Registration Form</title>
+<h1 style="font-size:48px ;color:#E94626" align=center>Books2Door</h1>
+<marquee style="color:black" BEHAVIOR=SCROLL onmouseover="mover(this)" onmouseout="mout(this)" SCROLLAMOUNT=10 bgcolor=white>Why own it when you can rent it...!</marquee><hr>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+function validateForm() 
+{
+  var x = document.forms["myForm"]["Name"].value;
+  if (x =="") 
+  {
+    alert("Name must be filled out");
+    return false;
+  }
+  var y=document.forms["myForm"]["DOB"].value;
+  if(y=="")
+  {
+	alert("Date of birth must be filled out");
+    return false;
+  }
+  var e=document.forms["myForm"]["Email_ID"].value;
+  var em=/^(([\-\w]+)\.?)+@(([\-\w]+)\.?)+\.[a-zA-Z]{2,4}$/;
+  if(e=="")
+  {
+	alert("Email ID must be filled out");
+	return false;
+  }
+  else if(em.test(e)==false)
+  {
+	alert("Email ID is not valid");	
+	return false;
+  }
+  var z= document.forms["myForm"]["Mobile"].value;
+  var m=/^[0-9]{10}$/;
+  if(z=="")
+  {
+	alert("Mobile Number must be filled out");
+	return false;
+  }
+   else if(m.test(z)==false)
+   {
+	 alert("Entered Mobile number is not valid");
+	return false;
+   }
+	var a=document.forms["myForm"]["Address"].value;
+	if(a=="")
+	{
+		alert("Address must be filled out");
+		return false;
+	}
+	var u=document.forms["myForm"]["Create_ID"].value;
+	var cr=/[A-Z]{1}[a-zA-Z0-9\_\.]+$/;
+	if(u==""||u==null)
+	{
+		document.getElementById("Create_ID").innerHTML=alert("First letter must be capital \nLetters,numbers,dot(.) and underscore(_) are allowed");
+		return false;
+	}
+	else if(cr.test(u)==false)
+	{
+		alert("ID is not valid");
+		return false;
+	}
+	var p=document.forms["myForm"]["password"].value;
+	var c=document.forms["myForm"]["Re-enter"].value;
+	var q=/[a-zA-Z0-9]+[@#$%^&]{1}$/;
+	
+	if(q.test(p)==false && p.length<8)
+	{
+		document.getElementById("password").innerHTML=alert("Create Password\nPassword must contain 1 special character \nPassword length must be of atleast 8 characters ");
+		return false;
+	}
+	if(c=='' || c==null)
+	{
+		alert("Confirm Password");
+		return false;
+	}
+	else if(c!=p)
+	{
+		alert("Re-entered Password is not matching");
+		return false;
+	}
+	document.getElementById("suc").innerHTML=alert("Hello "+x+", You have successfully registered ");
+	return true;
+}
+function mover(obj){
+obj.innerHTML = "Buy books on rent at affordable rates......!!";
+}
+function mout(obj)
+{
+	obj.innerHTML = "Why own it when you can rent it...!!";
+}
+function res()
+{
+	if(confirm("Do you want to reset?"))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+</script>
+<style>
+
+body{
+margin:0;
+background: url("Best-Books-for-AIIMS.jpeg");
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+.nav {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  height: 50px;
+  position:sticky;
+}
+h2{
+color:black;
+}
+#name,#DOB,#Email_ID,#Mobile,#Address,#Create_ID,#password,#Re-enter
+{
+	border-radius:20px;
+}
+.nav a {
+  float: left;
+  display: block;
+  color: #E94626;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+.nav a:hover {
+  background-color: #111;
+}
+fieldset
+{
+	display: inline-block;
+	margin-right:30%
+
+	border-left-color:black;
+	border-top-color:black;
+	border-right-color:black;
+	border-bottom-color:black;
+}
+textarea
+{
+	vertical-align:top;
+}
+</style>
+
+</head>
+<body>
+<div class="nav">
+	<a href="file:///C:/Users/user/dwhelper/Desktop/College%20Writeups%20andwork/WP-I/Books2Door/Home.html">Home</a>
+	<a href="file:///C:/Users/user/dwhelper/Desktop/College%20Writeups%20andwork/WP-I/Books2Door/List%20Of%20Books.html">List Of Books</a>
+	<a href="file:///C:/Users/user/dwhelper/Desktop/College%20Writeups%20andwork/WP-I/Books2Door/About%20us.html">About us</a>
+	<a href="file:///C:/Users/user/dwhelper/Desktop/College%20Writeups%20andwork/WP-I/Books2Door/Contact%20us.html">Contact us</a>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+					<form class="form-inline" action="/action_page.php">
+						<input class="form-control mr-sm-2" type="text" placeholder="Search">
+						<button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search"></span>Search</button>
+					</form>
+	</nav>
+</div>
+ <br>
+
+
+<form name="myForm" align="center" style="color:black;font-family:Comic Sans MS, cursive, sans-serif"onsubmit="return validateForm()" method="post">
+<fieldset ><legend><h2>Register for new Account:</h2></legend>
+
+<h3 style="font-size:17px">&nbsp&nbsp Name :  <input type="text" name="Name" id="Name"placeholder="Enter Name" ><br></h3>
+<h3 style="font-size:20px">&nbsp&nbsp DOB :  <input type="date" name="DOB" id="DOB" ><br></h3>
+<h3 style="font-size:17px">&nbsp&nbsp Email_ID: <input type="email" name="Email_ID" id="Email_ID"placeholder="Enter email"><br>
+<h3 style="font-size:17px">&nbsp&nbsp&nbsp Mobile: <input type="tel" name="Mobile" id="Mobile"placeholder="Enter Mobile Number"><br></h3>
+
+<h3 style="font-size:17px">&nbsp&nbsp Address:
+<textarea name="Address" id="Address" placeholder="Enter Full Address"style="height:100px"></textarea>
+<br><br>
+Create_ID: &nbsp <input type="text" name="Create_ID" id="Create_ID"placeholder="Create Username"><br><br>
+Password:&nbsp&nbsp <input type="password" name="password" id="password"placeholder="Create password"><br><br>
+Re-enter: &nbsp&nbsp <input type="password" name="Re-enter" id="Re-enter"placeholder="Confirm password"><br><br>
+Preffered Books:&nbsp&nbsp
+<input type="radio"name="radio" checked>Fictional 
+<input type="radio"name="radio">Novels
+<input type="radio"name="radio">Educational
+<input type="radio"name="radio">Cultural
+<input type="radio"name="radio">Others
+</h3>
+
+<br>
+<input type="submit" id="suc" value="Submit" class="btn btn-success" > <input type="reset" value="Reset" class="btn btn-warning" onclick="return res()">
+</h4></fieldset></form>
+</body>
+</html>
